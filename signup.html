@@ -25,19 +25,19 @@
             display: none;
         }
 
-        @media (max-width: 720px) {
+        @media (max-width: 1080px) {
             #mobile-content {
                 display: block;
             }
         }
 
-        @media (min-width: 721px) and (max-width: 1366px) {
+        @media (min-width: 1081px) and (max-width: 1920px) {
             #laptop-content {
                 display: block;
             }
         }
 
-        @media (min-width: 1367px) {
+        @media (min-width: 1921px) {
             #monitor-content {
                 display: block;
             }
@@ -46,7 +46,6 @@
 </head>
 <body>
     <div id="mobile-content">
-        
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="https://svgur.com/i/zrc.svg" type="image/x-icon">
     
@@ -60,16 +59,10 @@
             color: white;
         }
 
-        #main-content {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        #left-section {
+        #mobilelogin {
             border-radius: 20px;
-            padding: 0 20px;
-            width: 38%;
+            padding: 20px;
+            width: 80%;
             margin-right: 20px;
             box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
             backface-visibility: visible;
@@ -78,19 +71,36 @@
             display: block;
         }
 
-        #right-section {
-            text-align: center;
-            width: 45%;
+        #logininfo {
+            display: block;
+            width: 60%;
+            padding: 0.9rem;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #2b2b2b;
+            outline: none;
+            background: rgba(43, 43, 43, 0.7);
+            transition: background 0.2s, border-color 0.2s;
+            color: white;
+            margin-bottom: 7px;
+            margin-right: auto;
+            margin-left: auto;
         }
 
-
-        .button {
-            background-color: black;
+        #errorinfo {
+            display: block;
+            width: 80%;
+            padding: 0px;
+            box-sizing: border-box;
+            border-radius: 0px;
+            border: 0px;
+            outline: none;
+            background: transparent;
+            transition: background 0.2s, border-color 0.2s;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
+            margin-bottom: 0px;
+            margin-right: auto;
+            margin-left: auto;
         }
         
         @media (max-width: 1599px) {
@@ -138,9 +148,6 @@
     background: rgba(255, 255, 255, 0.2);
     animation: animate 33s linear infinite;
 }
-
-
-
 
 .background li:nth-child(0) {
     left: 12%;
@@ -365,66 +372,164 @@
     height: 128px;
     bottom: -128px;
     animation-delay: 35s;
-}</style>
-    <!-- Main Content -->
-    <div id="main-content" style="
-    z-index: 3;
-    margin-left: auto;
-    margin-right: 200px;
-">
-        <!-- Left Section -->
-        <div id="left-section" style="z-index: 4;margin-top: 900;width: 100%;margin-right: auto;background-color: rgba(43, 43, 43, 0.07);margin-left: auto;">
-            <h2 style="
-    margin-top: 0px;
-    margin-bottom: 8px;
-    font-size: 40;
-">Access All Unblocked Websites In One Space.</h2>
-            <p style="margin-top: 0;font-size: 30;color: grey;margin-bottom: 1;">People are enabled to access a variety of 3rd party applications and websites, such as proxies, unblocked games, and bypass tools, through Blocked. All credit for website redirects is given to their rightful owners.</p>
-            
-            
-        </div>
+}
+.form__input,
+.form__button {
+    font: 500 1rem 'Quicksand', sans-serif;
+}
 
-        <!-- Right Section -->
-        <div id="right-section" style="
-    padding-top: 12%;
-    padding-right: 50px;
-    z-index: 4;
-    display: block;
-    margin-top: 200;
-    margin-left: -800px;
-    margin-right: auto;
-">
-            <img id="Welcome" src="https://svgur.com/i/zrc.svg" alt="Blocked Logo" style="
-    height: 170px;
-    margin-right: auto;
-    margin-left: auto;
-">
-            <h2 style="
-    font-size: 100px;
-    font-weight: 850;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-">Blocked</h2>
-            <p style="
-    margin-top: 0px;
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 17px;
-    width: 400;
-    margin-left: auto;
-    margin-right: auto;
-">Blocked Access(All):</p>
-            <a href="home" class="button" style="
-    width: 80px;
-    height: 30px;
-    font-size: x-large;
+.form--hidden {
+    display: none;
+}
+
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.form__title {
+    margin-bottom: 2rem;
     text-align: center;
-">Launch</a>
-        </div>
-    </div>
-<ul class="background" style="z-index: 2;">
+}
+
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form__message--success {
+    color: var(--color-success);
+}
+
+.form__message--error {
+    color: var(--color-error);
+}
+
+.form__input-group-mobile {
+    margin-bottom: 1rem;
+    width: 40%;
+    height: 20%;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+.form__input--error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form__button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.form__button:hover {
+    background: var(--color-primary-dark);
+}
+
+.form__button:active {
+    transform: scale(0.98);
+}
+
+.form__text {
+    text-align: center;
+}
+
+.form__link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form__link:hover {
+    text-decoration: underline;
+}</style>
+
+
+
+    
+    
+    <!-- Main Content -->
+    <form class="form" id="mobilelogin" style="z-index: 4;background-color: rgba(43, 43, 43, 0.07);margin: auto;margin-top: 50%;position: relative;padding-top: 8%;height: 25%;" form="">
+            <h2 style="
+    font-size: 40;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+">Sign Up</h2>
+            
+            <div id="linebreak" class="linebreak" style="
+    border-bottom: 1px solid #3c3c3c;
+    margin: 3px 0;
+    height: 1px;
+    background-color: grey;
+    width: 84%;
+    margin-right: auto;
+    margin-left: auto;
+"></div>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group-mobile">
+                <input id="logininfo" type="text" class="form__input" autofocus="" placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group-mobile">
+                <input id="logininfo" type="text" class="form__input" autofocus="" placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group-mobile">
+                <input id="logininfo" type="password" class="form__input" autofocus="" placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group-mobile">
+                <input id="logininfo" type="password" class="form__input" autofocus="" placeholder="Confirm password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button id="logininfo" class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a id="logininfo" class="form__link" href="login" style="
+    width: 40px;
+    padding: 0px;
+    background: transparent;
+    border: 0px;
+">Login</a>
+            </p>
+        </form>
+        
+<ul class="background" style="
+    z-index: 2;
+">
    <li></li>
    <li></li>
    <li></li>
@@ -458,6 +563,7 @@
    <li></li>
    <li></li>
 </ul>
+
     </div>
 
     <div id="laptop-content">
@@ -475,48 +581,10 @@
             color: white;
         }
 
-        #topbar {
-            background-color: rgba(43, 43, 43, 0.07);
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            padding: 10px;
-            box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
-            backface-visibility: visible;
-            backdrop-filter: blur(10px);
-            display: block;
-        }
-
-        #brand-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-
-        #logo {
-            width: 30px; /* Adjust the size as needed */
-            height: 30px; /* Adjust the size as needed */
-            margin-right: 10px;
-        }
-
-        #brand {
-            font-weight: bold;
-            font-size: 18px; /* Adjust the font size as needed */
-        }
-
-        #subtitle {
-            font-size: 12px; /* Adjust the font size as needed */
-        }
-
-        #main-content {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        #left-section {
+        #login {
             border-radius: 20px;
             padding: 0 20px;
-            width: 38%;
+            width: 25%;
             margin-right: 20px;
             box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
             backface-visibility: visible;
@@ -525,24 +593,36 @@
             display: block;
         }
 
-        #right-section {
-            text-align: center;
-            width: 45%;
-        }
-
-        .divider {
-            border-right: 1px solid white;
-            height: 100%;
-            margin: 0 20px;
-        }
-
-        .button {
-            background-color: black;
+        #logininfo {
+            display: block;
+            width: 60%;
+            padding: 0.9rem;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #2b2b2b;
+            outline: none;
+            background: rgba(43, 43, 43, 0.7);
+            transition: background 0.2s, border-color 0.2s;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
+            margin-bottom: 7px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #errorinfo {
+            display: block;
+            width: 80%;
+            padding: 0px;
+            box-sizing: border-box;
+            border-radius: 0px;
+            border: 0px;
+            outline: none;
+            background: transparent;
+            transition: background 0.2s, border-color 0.2s;
+            color: white;
+            margin-bottom: 0px;
+            margin-right: auto;
+            margin-left: auto;
         }
         
         @media (max-width: 1599px) {
@@ -590,9 +670,6 @@
     background: rgba(255, 255, 255, 0.2);
     animation: animate 33s linear infinite;
 }
-
-
-
 
 .background li:nth-child(0) {
     left: 12%;
@@ -925,64 +1002,53 @@
     
     
     <!-- Main Content -->
-    <div id="main-content" style="
-    z-index: 3;
-    padding-bottom: 0px;
-">
-        <!-- Left Section -->
-        <div id="left-section" style="z-index: 4;background-color: rgba(43, 43, 43, 0.07);">
+    <form class="form" id="login" style="z-index: 4;background-color: rgba(43, 43, 43, 0.07);margin: auto;margin-top: 15%;position: relative;padding: 20px;padding-top: 5px;margin-bottom: auto;height: 40%;width: 30%;" form="">
             <h2 style="
-    margin-top: 0px;
-    margin-bottom: 8px;
     font-size: 40;
-">Access All Unblocked Websites In One Space.</h2>
-            <p style="margin-top: 0;font-size: 15;color: grey;">People are enabled to access a variety of 3rd party applications and websites, such as proxies, unblocked games, and bypass tools, through Blocked. All credit for website redirects is given to their rightful owners.</p>
+    margin-top: 10px;
+    width: 152;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+">Sign Up</h2>
+            
             <div id="linebreak" class="linebreak" style="
     border-bottom: 1px solid #3c3c3c;
-    margin: 8px 0;
+    margin: 3px 0;
     height: 1px;
     background-color: grey;
-"></div>
-            <img id="biglogo" src="https://svgur.com/i/zrc.svg" alt="Blocked Logo" style="
-    width: 55%;
-    height: 60%;
-    display: block;
-    margin-left: auto;
+    width: 80%;
     margin-right: auto;
-">
-        </div>
-
-        <!-- Right Section -->
-        <div id="right-section" style="
-    padding-top: 12%;
-    padding-right: 50px;
-    z-index: 4;
-">
-            <img id="Welcome" src="https://svgur.com/i/zrc.svg" alt="Blocked Logo" style="
-    height: 60px;
-    margin-right: 10px;
-    margin-left: 10px;
-">
-            <h2 style="
-    font-size: 70px;
-    font-weight: 850;
-    margin-top: 0px;
-    margin-bottom: 0px;
-">Blocked</h2>
-            <p style="
-    margin-top: 0px;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 17px;
-">Blocked Access(All):</p>
-            <a href="home" class="button" style="
-    width: 80px;
-    height: 30px;
-    font-size: x-large;
-    text-align: center;
-">Launch</a>
-        </div>
-    </div>
+    margin-left: auto;
+"></div>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input id="logininfo" type="text" class="form__input" autofocus="" placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input id="logininfo" type="text" class="form__input" autofocus="" placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input id="logininfo" type="password" class="form__input" autofocus="" placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input id="logininfo" type="password" class="form__input" autofocus="" placeholder="Confirm password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button id="logininfo" class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a id="logininfo" class="form__link" href="login" style="
+    width: 40px;
+    padding: 0px;
+    background: transparent;
+    border: 0px;
+">Login</a>
+            </p>
+        </form>
+        
 <ul class="background" style="
     z-index: 2;
 ">
@@ -1458,12 +1524,14 @@
     
     
     <!-- Main Content -->
-    <form class="form" id="login" style="z-index: 4;background-color: rgba(43, 43, 43, 0.07);margin: auto;margin-top: 4%;position: relative;padding: 20px;padding-top: 5px;" form="">
+    <form class="form" id="login" style="z-index: 4;background-color: rgba(43, 43, 43, 0.07);margin: auto;margin-top: 15%;position: relative;padding: 20px;padding-top: 5px;" form="">
             <h2 style="
-    margin: 159;
+    margin-right: auto;
+    margin-left: auto;
     font-size: 40;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
 ">Sign Up</h2>
             
             <div id="linebreak" class="linebreak" style="
@@ -1542,5 +1610,6 @@
 
     </div>
 <script src="https://saighed.xyz/login.js"></script>
+
 
 </body></html>
